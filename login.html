@@ -58,7 +58,7 @@
             <i class="fas fa-eye" onclick="show()"></i>
             <br />
             <br />
-            <button>LOGIN</button>
+            <button onclick="showAlert()">LOGIN</button>
             <p class="message"></p>
           </form>
 
@@ -71,25 +71,29 @@
       </div>
 
       <script>
-        function show(){
+        function show() {
           var password = document.getElementById("password");
-          var icon = document.querySelector(".fas")
+          var icon = document.querySelector(".fas");
 
           // ========== Checking type of password ===========
-          if(password.type === "password"){
+          if (password.type === "password") {
             password.type = "text";
-          }
-          else {
+          } else {
             password.type = "password";
           }
+        }
 
-          if (password.textContent.length < 4){
-            alert('password too short!!!');
+        function showAlert() {
+          var password = document.getElementById("password");
+          console.log(password.value);
+          if (password.value.length < 4) {
+            console.log("password too short!!!");
+            alert("password too short!!!");
+          } else {
+            console.log("OK!!!");
+            alert("OK!!!");
           }
-          else{
-            alert('OK!!!');
-          }
-        };
+        }
       </script>
     </body>
   </html>
